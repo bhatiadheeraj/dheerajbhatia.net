@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Tom Cat Animation</title>
+</head>
+<body>
+<canvas width=450 height=550 style="background-color: #e0e0e0;" id="canvas"></canvas>
+
+<script type="text/javascript">
+	
+  var ctx = canvas.getContext("2d");
+var y_pos = 0;
+var ghost = new Image();
+ghost.src = "witch.png"
+
+var cloud = new Image();
+cloud.src = "cloud.png";
+
+var scaredman = new Image();
+scaredman.src = "scaredman.png";
+  function myfunc () {
+ ctx.clearRect(0, 0,canvas.width, canvas.height);
+
+ctx.drawImage(cloud,1+y_pos,50);
+
+ ctx.drawImage(scaredman,canvas.width-y_pos,460);
+  y_pos = y_pos + 1;
+  ctx.drawImage(ghost,1+y_pos,canvas.height - y_pos);
+    ctx.drawImage(ghost,canvas.width-y_pos,canvas.height-y_pos);
+ 
+  }
+  	setInterval(myfunc,20);
+
+
+</script>
+
+
+</body>
+</html>
